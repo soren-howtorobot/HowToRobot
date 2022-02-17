@@ -13,11 +13,35 @@
             <h1>HowToRobot is down for maintenance!</h1>
          </div>
          <div class="middleContent">
-
+            <p>
+                HowToRobot is currently in the proccess of upgrading the website so you get a better experience here! <br>
+                Please standby.
+            </p>
          </div>
          <div class="bottomContent">
              <img src="assets/robot-animation.gif" alt="">
          </div>
+         <div class="clock">
+
+         </div>
      </div>
 </body>
+<script>
+    function seconds_since_epoch(d){ 
+        return Math.floor( d / 1000 ); 
+    }
+    function clockFunc(){
+        let currentEpoch = seconds_since_epoch(Date.now());
+        let endEpoch = seconds_since_epoch(Date.parse('2022-02-20T08:00:00'));
+        let clock = document.querySelector('.clock');
+        let timer = Math.floor(endEpoch - currentEpoch);
+        let h = Math.floor(timer / 3600)
+        let remaining = timer - h * 3600 ;
+        let m = Math.round(remaining / 60);
+        clock.textContent = h + " : "+ m ;
+        
+        setTimeout(clockFunc,1000)
+    }
+    clockFunc()
+</script>
 </html>
