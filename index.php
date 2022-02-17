@@ -1,5 +1,1 @@
-<?php
-
-
-echo "Hi mom!"
-?>
+<p>Hello World!</p>
