@@ -10,20 +10,23 @@
 <body>
      <div class="wrapper">
          <div class="topcontent">
-            <h1>HowToRobot is down for maintenance!</h1>
+             <img src="assets/HowToRobot-white.png" alt="">
+            
          </div>
          <div class="middleContent">
+             <h1>HowToRobot will be right back</h1>
             <p>
-                HowToRobot is currently in the proccess of upgrading the website so you get a better experience here! <br>
-                Please standby.
+We are giving our website a new motor to make it run faster than ever. It will be ready within a few hours. <br>
+                Thanks for your patience.
             </p>
+            <img src="assets/robot-animation.gif" alt="">
          </div>
          <div class="bottomContent">
-             <img src="assets/robot-animation.gif" alt="">
+             
+             <h2>Estimated time remaining - <span id="hours"></span> hours and <span id="minutes"></span> minute(s)</h2>
+             
          </div>
-         <div class="clock">
-
-         </div>
+         
      </div>
 </body>
 <script>
@@ -32,13 +35,13 @@
     }
     function clockFunc(){
         let currentEpoch = seconds_since_epoch(Date.now());
-        let endEpoch = seconds_since_epoch(Date.parse('2022-02-20T08:00:00'));
-        let clock = document.querySelector('.clock');
-        let timer = Math.floor(endEpoch - currentEpoch);
+        let endEpoch = seconds_since_epoch(Date.parse('2022-02-20T08:00:00'));        let timer = Math.floor(endEpoch - currentEpoch);
         let h = Math.floor(timer / 3600)
         let remaining = timer - h * 3600 ;
         let m = Math.round(remaining / 60);
-        clock.textContent = h + " : "+ m ;
+        hours.textContent = h;
+        minutes.textContent = m;
+        //clock.textContent = h + " : "+ m ;
         
         setTimeout(clockFunc,1000)
     }
